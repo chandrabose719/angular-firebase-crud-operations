@@ -1,0 +1,41 @@
+<div class="new">
+  <div class="container">
+    <h4 class="text-center">Add New mobile</h4>
+    <form novalidate #new="ngForm" (ngSubmit)="new.form.valid && onNewProduct()">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
+          <div class="form-group mb-3">
+            <label>Mobile Name</label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="products.name" required>
+            <span class="text-danger" *ngIf="submit && name.errors?.['required']">Name should not empty!</span>
+          </div>  
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
+          <div class="form-group mb-3">
+            <label>Mobile Description</label>
+            <input type="text" class="form-control" name="description" #description="ngModel" [(ngModel)]="products.description" required>
+            <span class="text-danger" *ngIf="submit && description.errors?.['required']">Description should not empty!</span>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
+          <div class="form-group mb-3">
+            <label>Mobile Price</label>
+            <input type="text" class="form-control" name="price" #price="ngModel" [(ngModel)]="products.price" required>
+            <span class="text-danger" *ngIf="submit && price.errors?.['required']">Price should not empty!</span>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
+          <button type="submit" class="form-control btn btn-primary" (click)="submit=true" [disabled]="loading">
+            <span class="spinner-border spinner-border-sm" [ngClass]="loading ? '' : 'visually-hidden'" role="status" aria-hidden="true"></span>
+            SUBMIT
+          </button>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4 col-xxl-4 offset-xxl-4">
+          <button type="submit" class="form-control btn btn-primary my-2" routerLink="/mobile/all">
+            MOBILES LIST
+          </button>
+        </div>
+      </div>
+    </form>  
+  </div>
+</div>

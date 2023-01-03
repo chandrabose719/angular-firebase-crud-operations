@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light navbar-expand-md shadow-sm fixed-top navbar-custom">
+  <div class="container my-2">
+    <a class="navbar-brand" routerLink="/">
+      <h4 class="mb-0 text-white">{{ brandName }}</h4>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-links">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item px-2" *ngFor="let link of links">
+          <a class="nav-link text-white" routerLink="{{ link.path }}">{{ link.name }}</a>
+        </li>
+      </ul>  
+    </div>
+  </div>
+</nav>
